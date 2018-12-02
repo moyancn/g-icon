@@ -7,7 +7,7 @@ Vue.use(GIcon, {
   'arrow-left': require('!svg-inline-loader!@/assets/icons/arrow-left.svg'),
   'arrow-right': [
     require('!svg-inline-loader!@/assets/icons/arrow-right.svg'),
-    { keepAttrs: ['class'] }
+    { stroke: 3, keepAttrs: true }
   ],
   'chevron-left': require('!svg-inline-loader!@/assets/icons/chevron-left.svg'),
   'chevron-right': require('!svg-inline-loader!@/assets/icons/chevron-right.svg'),
