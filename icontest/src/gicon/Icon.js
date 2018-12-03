@@ -17,6 +17,7 @@ class Icon {
         return acc
       }, {})
       : attributes
+
     delete attrs.keepAttrs
     this.attrs = {
       ...DEFAULT_ATTRS,
@@ -30,7 +31,6 @@ class Icon {
         )
       }
     }
-    // console.log('attrs...........', this.attrs)
   }
 
   /**
@@ -58,8 +58,10 @@ class Icon {
  * @returns {string}
  */
 function removeSVGRootTag (svgString, keepAttrs = false) {
+  console.log('svgRoot.innerHTML..', svgString)
   let svgRoot = new DOMParser().parseFromString(svgString, 'image/svg+xml')
     .firstChild
+  console.log('svgRoot.innerHTML..', svgRoot)
   return {
     str: svgRoot.innerHTML,
     ...(keepAttrs === true || Array.isArray(keepAttrs)
@@ -74,12 +76,16 @@ function removeSVGRootTag (svgString, keepAttrs = false) {
  * @returns {object} attributes of the element
  */
 function getAttributes (el) {
-  return Array.from(el.attributes)
+  // console.log('Array.from(el.attributes).', Array.from(el.attributes))
+  const attrs = Array.from(el.attributes)
     .map(a => [a.name, a.value])
     .reduce((acc, attr) => {
       acc[attr[0]] = attr[1]
       return acc
     }, {})
+
+  // zconsole.log('getAttributes...........', attrs)
+  return attrs
 }
 
 /**

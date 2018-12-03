@@ -1,6 +1,7 @@
 <template>
   <div class='icon-set-page'>
-    <div class='icon-set-container'>
+    <div class='icon-set-container'
+      v-if='filterIcons.length>0'>
       <div class='icon-set-item'
         @click.stop="itemTap(name)"
         v-for="(name,index) in filterIcons"
@@ -46,6 +47,7 @@ export default {
     }),
     resetIcons () {
       let icons = {}
+      console.log('this.filterIcons..', this.filterIcons)
       if (this.filterIcons) {
         this.filterIcons.map(name => {
           //console.log('this.currentIconSet.options..', this.currentIconSet.options)

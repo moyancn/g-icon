@@ -2,7 +2,8 @@
   <div>
     <el-form ref="form"
       label-width="50px"
-      size="mini">
+      size="mini"
+      v-if='currentIconSet'>
       <el-form-item label='名称'>
         <el-input placeholder="图标集名称"
           v-model="currentIconSet.label"></el-input>

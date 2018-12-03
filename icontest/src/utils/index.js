@@ -27,7 +27,7 @@ export const TEST_ICON_SET_LIST = DEFAULT_ICON_SET_LIST.concat([
     id: 4,
     label: '秒书',
     parentId: 1,
-    icons: ['arrow-left', 'user', 'users', 'alipay']
+    icons: ['arrow-left', 'user', 'users', 'alipay', 'battery-empty']
   },
   {
     id: 5,

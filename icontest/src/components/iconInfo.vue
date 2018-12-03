@@ -50,6 +50,10 @@
           <el-radio-button label="square"></el-radio-button>
         </el-radio-group>
       </el-form-item>
+      <el-form-item label="outline">
+        <el-switch v-model='customIcon.outline'>
+        </el-switch>
+      </el-form-item>
     </el-form>
   </div>
 </template>
@@ -59,6 +63,7 @@ export default {
   data () {
     return {
       customIcon: {
+        outline: false,
         fontSize: 12
       }
     }
@@ -70,6 +75,8 @@ export default {
     }),
     options () {
       return {
+        'fill': this.customIcon.outline ? 'none' : 'currentColor',
+        'stroke': this.customIcon.outline ? 'currentColor' : 'currentColor',
         'stroke-width': this.customIcon.strokeWidth,
         'stroke-linecap': this.customIcon.strokeLineType,
         'stroke-linejoin': this.customIcon.strokeLineType
